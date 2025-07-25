@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My App Components</string>
+    <string name="title_activity_text_view">TextViewActivity</string>
+    <string name="title_activity_image_view">ImageViewActivity</string>
+    <string name="title_activity_tasks_view">TasksViewActivity</string>
+    <string name="title_activity_todo_view">TodoViewActivity</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_quiz_main">QuizMainActivity</string>
+    <string name="title_activity_quiz_question">QuizQuestionActivity</string>
+</resources>
