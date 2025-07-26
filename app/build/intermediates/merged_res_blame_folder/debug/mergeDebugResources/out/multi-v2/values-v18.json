@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.usil.myappcomponents.app-mergeDebugResources-55:/values-v18/values-v18.xml",
+            "outputFile": "com.usil.myappcomponents.app-mergeDebugResources-60:/values-v18/values-v18.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-4\\21e6f765c3c5fc3d910c83a0348db221\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",

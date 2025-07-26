@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.usil.myappcomponents.app-mergeDebugResources-55:/values-hu/values-hu.xml",
+            "outputFile": "com.usil.myappcomponents.app-mergeDebugResources-60:/values-hu/values-hu.xml",
             "map": [
                 {
                     "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-4\\f56ef0567a2895b13ea21527c80aaa56\\transformed\\play-services-basement-18.0.0\\res\\values-hu\\values.xml",

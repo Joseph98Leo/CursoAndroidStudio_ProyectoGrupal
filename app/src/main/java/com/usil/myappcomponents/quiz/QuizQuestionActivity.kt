@@ -21,6 +21,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.usil.myappcomponents.components.QuizAnswerView
 import com.usil.myappcomponents.components.QuizQuestionView
 import com.usil.myappcomponents.components.ResultadoQuizActivity
+import com.usil.myappcomponents.navigation.AppNavigation
 import com.usil.myappcomponents.quiz.ui.theme.MyAppComponentsTheme
 import com.usil.myappcomponents.viewModel.QuizViewModel
 
@@ -30,7 +31,8 @@ class QuizQuestionActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyAppComponentsTheme {
-                QuizScreen()
+                AppNavigation()
+                // QuizScreen()
             }
         }
     }
@@ -49,7 +51,6 @@ fun QuizScreen() {
 
     val totalQuestions = questions.size
     val userAnswers = remember { mutableStateListOf<Pair<String, Boolean>>() }
-    val isQuizFinished = currentIndex >= totalQuestions
 
     var selectedAnswer by remember { mutableStateOf<String?>(null) }
 
@@ -152,88 +153,3 @@ fun QuizScreen() {
         }
     )
 }
-
-
-
-
-
-
-/**
-@Composable
-fun QuizQuestionView(
-    paddingValues: PaddingValues = PaddingValues(12.dp),
-    question: String
-) {
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(200.dp)
-            .padding(paddingValues)
-            .padding(horizontal = 16.dp),
-        color = Color.Magenta
-    ) {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Text(
-                text = question,
-                color = Color.White,
-                style = MaterialTheme.typography.titleMedium
-            )
-        }
-    }
-}
-
-@Composable
-fun QuizAnswerView(
-    paddingValues: PaddingValues = PaddingValues(12.dp),
-    correctAnswer: String,
-    incorrectAnswers: List<String>,
-    onAnswerSelected: (String) -> Unit = {}
-) {
-    val allAnswers = remember(correctAnswer, incorrectAnswers) {
-        (incorrectAnswers + correctAnswer).shuffled()
-    }
-
-    var selectedAnswer by remember { mutableStateOf<String?>(null) }
-
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(300.dp)
-            .padding(horizontal = 16.dp),
-        color = Color.Cyan
-    ) {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            allAnswers.forEach { answer ->
-
-                val isSelected = selectedAnswer == answer
-                val isCorrect = answer == correctAnswer
-
-                Button(
-                    onClick = {
-                        selectedAnswer = answer
-                        onAnswerSelected(answer)
-                              },
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = when {
-                            isSelected && isCorrect -> Color(0xFF4CAF50)
-                            isSelected && !isCorrect -> Color(0xFFF44336)
-                            else -> Color(0xFF6200EE)
-                        },
-                    )
-                ) {
-                    Text(text = answer, color = Color.Black)
-                }
-            }
-        }
-    }
-}
-*/

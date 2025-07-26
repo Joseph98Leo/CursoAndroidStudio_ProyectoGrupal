@@ -13,6 +13,7 @@ drawable avenger_2
 drawable avengers_3jpg
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable quizlogo
 id map
 layout activity_maps
 mipmap ic_launcher

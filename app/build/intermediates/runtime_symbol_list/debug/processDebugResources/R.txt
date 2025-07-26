@@ -31,6 +31,7 @@ int animator fragment_open_enter 0x7f020004
 int animator fragment_open_exit 0x7f020005
 int attr SharedValue 0x7f030000
 int attr SharedValueId 0x7f030001
+int attr action 0x7f030251
 int attr actionBarDivider 0x7f030002
 int attr actionBarItemBackground 0x7f030003
 int attr actionBarPopupTheme 0x7f030004
@@ -80,6 +81,7 @@ int attr animateCircleAngleTo 0x7f03002f
 int attr animateRelativeTo 0x7f030030
 int attr applyMotionScene 0x7f030031
 int attr arcMode 0x7f030032
+int attr argType 0x7f030252
 int attr arrowHeadLength 0x7f030033
 int attr arrowShaftLength 0x7f030034
 int attr attributeName 0x7f030035
@@ -199,12 +201,15 @@ int attr customNavigationLayout 0x7f0300a6
 int attr customPixelDimension 0x7f0300a7
 int attr customReference 0x7f0300a8
 int attr customStringValue 0x7f0300a9
+int attr data 0x7f030253
+int attr dataPattern 0x7f030254
 int attr defaultDuration 0x7f0300aa
 int attr defaultQueryHint 0x7f0300ab
 int attr defaultState 0x7f0300ac
 int attr deltaPolarAngle 0x7f0300ad
 int attr deltaPolarRadius 0x7f0300ae
 int attr deriveConstraintsFrom 0x7f0300af
+int attr destination 0x7f030255
 int attr dialogCornerRadius 0x7f0300b0
 int attr dialogPreferredPadding 0x7f0300b1
 int attr dialogTheme 0x7f0300b2
@@ -235,6 +240,8 @@ int attr editTextColor 0x7f0300ca
 int attr editTextStyle 0x7f0300cb
 int attr elevation 0x7f0300cc
 int attr emojiCompatEnabled 0x7f0300cd
+int attr enterAnim 0x7f030256
+int attr exitAnim 0x7f030257
 int attr expandActivityOverflowButtonDrawable 0x7f0300ce
 int attr firstBaselineToTopHeight 0x7f0300cf
 int attr flow_firstHorizontalBias 0x7f0300d0
@@ -271,6 +278,7 @@ int attr fontWeight 0x7f0300ee
 int attr framePosition 0x7f0300ef
 int attr gapBetweenBars 0x7f0300f0
 int attr goIcon 0x7f0300f1
+int attr graph 0x7f030258
 int attr guidelineUseRtl 0x7f0300f2
 int attr height 0x7f0300f3
 int attr hideOnContentScroll 0x7f0300f4
@@ -300,6 +308,7 @@ int attr latLngBoundsNorthEastLatitude 0x7f03010b
 int attr latLngBoundsNorthEastLongitude 0x7f03010c
 int attr latLngBoundsSouthWestLatitude 0x7f03010d
 int attr latLngBoundsSouthWestLongitude 0x7f03010e
+int attr launchSingleTop 0x7f030259
 int attr layout 0x7f03010f
 int attr layoutDescription 0x7f030110
 int attr layoutDuringTransition 0x7f030111
@@ -391,6 +400,7 @@ int attr maxWidth 0x7f030166
 int attr measureWithLargestChild 0x7f030167
 int attr menu 0x7f030168
 int attr methodName 0x7f030169
+int attr mimeType 0x7f03025a
 int attr minHeight 0x7f03016a
 int attr minWidth 0x7f03016b
 int attr mock_diagonalsColor 0x7f03016c
@@ -417,11 +427,13 @@ int attr motion_postLayoutCollision 0x7f030180
 int attr motion_triggerOnCollision 0x7f030181
 int attr moveWhenScrollAtTop 0x7f030182
 int attr multiChoiceItemLayout 0x7f030183
+int attr navGraph 0x7f03025b
 int attr navigationContentDescription 0x7f030184
 int attr navigationIcon 0x7f030185
 int attr navigationMode 0x7f030186
 int attr nestedScrollFlags 0x7f030187
 int attr nestedScrollViewStyle 0x7f030188
+int attr nullable 0x7f03025c
 int attr numericModifiers 0x7f030189
 int attr onCross 0x7f03018a
 int attr onHide 0x7f03018b
@@ -449,6 +461,11 @@ int attr perpendicularPath_percent 0x7f0301a0
 int attr pivotAnchor 0x7f0301a1
 int attr placeholder_emptyVisibility 0x7f0301a2
 int attr polarRelativeTo 0x7f0301a3
+int attr popEnterAnim 0x7f03025d
+int attr popExitAnim 0x7f03025e
+int attr popUpTo 0x7f03025f
+int attr popUpToInclusive 0x7f030260
+int attr popUpToSaveState 0x7f030261
 int attr popupMenuStyle 0x7f0301a4
 int attr popupTheme 0x7f0301a5
 int attr popupWindowStyle 0x7f0301a6
@@ -473,9 +490,11 @@ int attr region_heightLessThan 0x7f0301b8
 int attr region_heightMoreThan 0x7f0301b9
 int attr region_widthLessThan 0x7f0301ba
 int attr region_widthMoreThan 0x7f0301bb
+int attr restoreState 0x7f030262
 int attr rotationCenterId 0x7f0301bc
 int attr round 0x7f0301bd
 int attr roundPercent 0x7f0301be
+int attr route 0x7f030263
 int attr saturation 0x7f0301bf
 int attr scaleFromTextSize 0x7f0301c0
 int attr scopeUris 0x7f0301c1
@@ -505,6 +524,7 @@ int attr springStiffness 0x7f0301d8
 int attr springStopThreshold 0x7f0301d9
 int attr srcCompat 0x7f0301da
 int attr staggered 0x7f0301db
+int attr startDestination 0x7f030264
 int attr state_above_anchor 0x7f0301dc
 int attr subMenuArrow 0x7f0301dd
 int attr submitBackground 0x7f0301de
@@ -518,6 +538,7 @@ int attr switchPadding 0x7f0301e5
 int attr switchStyle 0x7f0301e6
 int attr switchTextAppearance 0x7f0301e7
 int attr targetId 0x7f0301e8
+int attr targetPackage 0x7f030265
 int attr telltales_tailColor 0x7f0301e9
 int attr telltales_tailScale 0x7f0301ea
 int attr telltales_velocityMode 0x7f0301eb
@@ -596,6 +617,7 @@ int attr uiTiltGestures 0x7f030233
 int attr uiZoomControls 0x7f030234
 int attr uiZoomGestures 0x7f030235
 int attr upDuration 0x7f030236
+int attr uri 0x7f030266
 int attr useViewLifecycle 0x7f030237
 int attr viewInflaterClass 0x7f030238
 int attr viewTransitionMode 0x7f030239
@@ -986,6 +1008,7 @@ int drawable notification_template_icon_bg 0x7f070081
 int drawable notification_template_icon_low_bg 0x7f070082
 int drawable notification_tile_bg 0x7f070083
 int drawable notify_panel_notification_icon_bg 0x7f070084
+int drawable quizlogo 0x7f070088
 int drawable test_level_drawable 0x7f070085
 int drawable tooltip_frame_dark 0x7f070086
 int drawable tooltip_frame_light 0x7f070087
@@ -1190,6 +1213,7 @@ int id message 0x7f0800c5
 int id middle 0x7f0800c6
 int id motion_base 0x7f0800c7
 int id multiply 0x7f0800c8
+int id nav_controller_view_tag 0x7f08014d
 int id never 0x7f0800c9
 int id neverCompleteToEnd 0x7f0800ca
 int id neverCompleteToStart 0x7f0800cb
@@ -1917,6 +1941,12 @@ int styleable ActionMode_titleTextStyle 5
 int[] styleable ActivityChooserView { 0x7f0300ce, 0x7f030105 }
 int styleable ActivityChooserView_expandActivityOverflowButtonDrawable 0
 int styleable ActivityChooserView_initialActivityCount 1
+int[] styleable ActivityNavigator { 0x01010003, 0x7f030251, 0x7f030253, 0x7f030254, 0x7f030265 }
+int styleable ActivityNavigator_android_name 0
+int styleable ActivityNavigator_action 1
+int styleable ActivityNavigator_data 2
+int styleable ActivityNavigator_dataPattern 3
+int styleable ActivityNavigator_targetPackage 4
 int[] styleable AlertDialog { 0x010100f2, 0x7f030054, 0x7f030055, 0x7f030152, 0x7f030153, 0x7f030183, 0x7f0301ce, 0x7f0301cf }
 int styleable AlertDialog_android_layout 0
 int styleable AlertDialog_buttonIconDimen 1
@@ -3033,6 +3063,38 @@ int[] styleable MotionTelltales { 0x7f0301e9, 0x7f0301ea, 0x7f0301eb }
 int styleable MotionTelltales_telltales_tailColor 0
 int styleable MotionTelltales_telltales_tailScale 1
 int styleable MotionTelltales_telltales_velocityMode 2
+int[] styleable NavAction { 0x010100d0, 0x7f030255, 0x7f030256, 0x7f030257, 0x7f030259, 0x7f03025d, 0x7f03025e, 0x7f03025f, 0x7f030260, 0x7f030261, 0x7f030262 }
+int styleable NavAction_android_id 0
+int styleable NavAction_destination 1
+int styleable NavAction_enterAnim 2
+int styleable NavAction_exitAnim 3
+int styleable NavAction_launchSingleTop 4
+int styleable NavAction_popEnterAnim 5
+int styleable NavAction_popExitAnim 6
+int styleable NavAction_popUpTo 7
+int styleable NavAction_popUpToInclusive 8
+int styleable NavAction_popUpToSaveState 9
+int styleable NavAction_restoreState 10
+int[] styleable NavArgument { 0x01010003, 0x010101ed, 0x7f030252, 0x7f03025c }
+int styleable NavArgument_android_name 0
+int styleable NavArgument_android_defaultValue 1
+int styleable NavArgument_argType 2
+int styleable NavArgument_nullable 3
+int[] styleable NavDeepLink { 0x010104ee, 0x7f030251, 0x7f03025a, 0x7f030266 }
+int styleable NavDeepLink_android_autoVerify 0
+int styleable NavDeepLink_action 1
+int styleable NavDeepLink_mimeType 2
+int styleable NavDeepLink_uri 3
+int[] styleable NavGraphNavigator { 0x7f030264 }
+int styleable NavGraphNavigator_startDestination 0
+int[] styleable NavHost { 0x7f03025b }
+int styleable NavHost_navGraph 0
+int[] styleable NavInclude { 0x7f030258 }
+int styleable NavInclude_graph 0
+int[] styleable Navigator { 0x01010001, 0x010100d0, 0x7f030263 }
+int styleable Navigator_android_label 0
+int styleable Navigator_android_id 1
+int styleable Navigator_route 2
 int[] styleable OnClick { 0x7f03007a, 0x7f0301e8 }
 int styleable OnClick_clickAction 0
 int styleable OnClick_targetId 1

@@ -58,12 +58,12 @@
 38        android:extractNativeLibs="false"
 39        android:fullBackupContent="@xml/backup_rules"
 39-->C:\Users\USER\Desktop\AndroidStudio\usil-components-app-main\app\src\main\AndroidManifest.xml:11:9-54
-40        android:icon="@mipmap/ic_launcher"
-40-->C:\Users\USER\Desktop\AndroidStudio\usil-components-app-main\app\src\main\AndroidManifest.xml:12:9-43
+40        android:icon="@drawable/quizlogo"
+40-->C:\Users\USER\Desktop\AndroidStudio\usil-components-app-main\app\src\main\AndroidManifest.xml:12:9-42
 41        android:label="@string/app_name"
 41-->C:\Users\USER\Desktop\AndroidStudio\usil-components-app-main\app\src\main\AndroidManifest.xml:13:9-41
-42        android:roundIcon="@mipmap/ic_launcher_round"
-42-->C:\Users\USER\Desktop\AndroidStudio\usil-components-app-main\app\src\main\AndroidManifest.xml:14:9-54
+42        android:roundIcon="@drawable/quizlogo"
+42-->C:\Users\USER\Desktop\AndroidStudio\usil-components-app-main\app\src\main\AndroidManifest.xml:14:9-47
 43        android:supportsRtl="true"
 43-->C:\Users\USER\Desktop\AndroidStudio\usil-components-app-main\app\src\main\AndroidManifest.xml:15:9-35
 44        android:testOnly="true"
