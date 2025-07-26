@@ -1,6 +1,7 @@
 package com.usil.myappcomponents.quiz
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -17,6 +18,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.usil.myappcomponents.components.QuizAnswerView
+import com.usil.myappcomponents.components.QuizQuestionView
+import com.usil.myappcomponents.components.ResultadoQuizActivity
 import com.usil.myappcomponents.quiz.ui.theme.MyAppComponentsTheme
 import com.usil.myappcomponents.viewModel.QuizViewModel
 
@@ -44,10 +48,10 @@ fun QuizScreen() {
     val currentQuestion = questions.getOrNull(currentIndex)
 
     val totalQuestions = questions.size
-
     val userAnswers = remember { mutableStateListOf<Pair<String, Boolean>>() }
-
     val isQuizFinished = currentIndex >= totalQuestions
+
+    var selectedAnswer by remember { mutableStateOf<String?>(null) }
 
     LaunchedEffect(Unit) {
         viewModel.getQuestions()
@@ -56,16 +60,20 @@ fun QuizScreen() {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Quiz Question", color = Color.Red) },
+                title = {
+                    Text(
+                        "Preguntas del Quiz",
+                        style = MaterialTheme.typography.titleLarge,
+                        color = Color.White
+                    )
+                },
                 navigationIcon = {
                     IconButton(onClick = { (context as Activity).finish() }) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Atrás", tint = Color.White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF6200EE),
-                    titleContentColor = Color.White,
-                    navigationIconContentColor = Color.White
+                    containerColor = Color(0xFF3F51B5)
                 )
             )
         },
@@ -74,40 +82,63 @@ fun QuizScreen() {
                 Column(
                     modifier = Modifier
                         .padding(paddingValues)
-                        .fillMaxSize(),
+                        .fillMaxSize()
+                        .padding(horizontal = 16.dp),
                     verticalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Column {
+                    Column(
+                        verticalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        Spacer(modifier = Modifier.height(8.dp))
                         QuizQuestionView(
-                            paddingValues = paddingValues,
+                            paddingValues = PaddingValues(0.dp),
                             question = question.question
                         )
                         QuizAnswerView(
-                            paddingValues = paddingValues,
+                            paddingValues = PaddingValues(0.dp),
                             correctAnswer = question.correctAnswer,
                             incorrectAnswers = question.incorrectAnswers,
+                            selectedAnswer = selectedAnswer,
                             onAnswerSelected = { selected ->
                                 val isCorrect = selected == question.correctAnswer
-                                if( userAnswers.size <= currentIndex ) {
+                                if (userAnswers.size <= currentIndex) {
                                     userAnswers.add(selected to isCorrect)
                                 }
+                                selectedAnswer = selected
                             }
                         )
                     }
 
-                    // Botón Siguiente
                     Button(
                         onClick = {
                             if (currentIndex < questions.lastIndex) {
                                 currentIndex++
+                                selectedAnswer = null
+                            } else {
+                                // Ir a la pantalla de resultados
+                                val correctCount = userAnswers.count { it.second }
+                                val incorrectCount = userAnswers.count { !it.second }
+                                val unansweredCount = questions.size - userAnswers.size
+
+                                val intent = Intent(context, ResultadoQuizActivity::class.java).apply {
+                                    putExtra("correctCount", correctCount)
+                                    putExtra("incorrectCount", incorrectCount)
+                                    putExtra("unansweredCount", unansweredCount)
+                                }
+                                context.startActivity(intent)
+                                (context as Activity).finish()
                             }
                         },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(16.dp),
-                        enabled = currentIndex < questions.lastIndex
+                            .padding(vertical = 16.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF009688)),
+                        enabled = selectedAnswer != null // Solo permite avanzar si se eligió una respuesta
                     ) {
-                        Text("Siguiente")
+                        Text(
+                            if (currentIndex < questions.lastIndex) "Siguiente" else "Finalizar",
+                            color = Color.White
+                        )
                     }
                 }
             } ?: Box(
@@ -116,12 +147,18 @@ fun QuizScreen() {
                     .padding(paddingValues),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Cargando pregunta...")
+                CircularProgressIndicator(color = Color(0xFF3F51B5))
             }
         }
     )
 }
 
+
+
+
+
+
+/**
 @Composable
 fun QuizQuestionView(
     paddingValues: PaddingValues = PaddingValues(12.dp),
@@ -199,3 +236,4 @@ fun QuizAnswerView(
         }
     }
 }
+*/
