@@ -52,6 +52,30 @@ android {
 }
 
 dependencies {
+
+    // Compose BOM
+    implementation(platform("androidx.compose:compose-bom:2024.04.00")) // O la última versión estable
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3") // Para Material 3
+
+    // Navigation Compose
+    implementation("androidx.navigation:navigation-compose:2.7.0-beta02") // Considera usar una versión más reciente que 2.5.0-rc01 si hay disponible una estable
+
+    // Activity Compose
+    implementation("androidx.activity:activity-compose:1.9.0") // O la última versión estable
+
+    // Kotlin Coroutines (para delay)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3") // O la última versión estable
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3") // O la última versión estable
+
+    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

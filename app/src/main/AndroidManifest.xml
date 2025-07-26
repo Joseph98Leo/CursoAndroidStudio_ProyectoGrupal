@@ -9,9 +9,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/quizlogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/quizlogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAppComponents"
         tools:targetApi="31">
@@ -24,6 +24,11 @@
             android:name=".quiz.QuizMainActivity"
             android:exported="false"
             android:label="@string/title_activity_quiz_main"
+            android:theme="@style/Theme.MyAppComponents" />
+
+        <activity android:name=".components.ResultadoQuizActivity"
+            android:exported="false"
+            android:label="ResultadoQuizActivity"
             android:theme="@style/Theme.MyAppComponents" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
